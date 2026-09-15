@@ -9,93 +9,304 @@
 </head>
 
 <body>
+    <button class="theme" type="button">
+        <i data-lucide="sun" class="theme-light-icon"></i>
+        <i data-lucide="moon-star" class="theme-dark-icon"></i>
+    </button>
+
     <div class="page">
-        <header>
-            <section class="info">
-                <img src="photo.png" alt="Фото" />
-                <h1>Попова Екатерина</h1>
-                <p>Frontend developer</p>
-                <q>Если вы наслаждаетесь используемыми инструментами, то работа будет выполнена успешно</q>
-                <p>Donald Knuth</p>
+        <header class="header">
+            <section class="banner-photo">
+                <img src="./images/avatar-resume.jpg" alt="Фото" />
             </section>
 
-            <hr>
-
-            <section class="contacts">
-                <div>
-                    <div>
-                        <img src="photo.png" alt="" />
+            <div class="header-container">
+                <section class="profile-info">
+                    <div class="header-title">
+                        <h1>Попова Екатерина</h1>
+                        <p>Frontend разработчик</p>
                     </div>
 
-                    <div>
-                        <p>Github</p>
-                        <p>тут будет ссылка на git</p>
-                    </div>
-                </div>
+                    <blockquote class="blockquote">
+                        <p>Если вы наслаждаетесь используемыми инструментами, то работа будет выполнена успешно</p>
+                        <cite>Дональд Кнут</cite>
+                    </blockquote>
 
-                <div>
-                    <div>
-                        <img src="photo.png" alt="" />
-                    </div>
+                </section>
 
-                    <div>
-                        <p>Адрес</p>
-                        <p>Москва, Россия</p>
-                    </div>
-                </div>
-            </section>
+                <div class="divider"></div>
 
-            <hr>
+                <section class="contacts">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="link"></i>
+                        </div>
 
-            <section class="languages">
-                <h2>Языки</h2>
-                <div>
-                    <div>
-                        <img src="photo.png" alt="" />
+                        <div class="contact-content">
+                            <p class="contact-label">Github</p>
+                            <p class="contact-value"><a href="https://github.com/KatrinHurricaneGSL" target="_blank" rel="noopener noreferrer">Мои проекты</a></p>
+                        </div>
                     </div>
 
-                    <div>
-                        <p>Русский</p>
-                        <p>Родной</p>
-                    </div>
-                </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
 
-                <div>
-                    <div>
-                        <img src="photo.png" alt="" />
+                        <div class="contact-content">
+                            <p class="contact-label">Адрес</p>
+                            <p class="contact-value">Москва, Россия</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="divider"></div>
+
+                <section class="languages">
+                    <h2 class="contact-label">Языки</h2>
+                    <div class="contact-item">
+                        <div class="contact-icon"
+                            style="background-image: url(./images/ru-flag.jpg); background-size: cover;"></div>
+
+                        <div class="contact-content">
+                            <p class="contact-value">Русский</p>
+                            <p class="contact-label">Родной</p>
+                        </div>
                     </div>
 
-                    <div>
-                        <p>Английский</p>
-                        <p>B1 - Средний</p>
+                    <div class="contact-item">
+                        <div class="contact-icon"
+                            style="background-image: url(./images/en-flag.jpg); background-size: cover; background-position: center;">
+                        </div>
+
+                        <div class="contact-content">
+                            <p class="contact-value">Английский</p>
+                            <p class="contact-label">B1 - Средний</p>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </header>
 
-        <main>
-            <section class="">
-                <h2>О себе</h2>
+        <main class="main">
+            <div class="main-container">
+                <div class="main-content">
+                    <section class="section">
+                        <div class="section-timeline">
+                            <div class="circle">
+                                <div class="point"></div>
+                            </div>
+                            <div class="line"></div>
+                        </div>
 
-            </section>
+                        <div class="section-content">
+                            <h2 class="section-title">О себе</h2>
 
-            <section class="">
-                <h2>Навыки</h2>
+                            <div class="section-body">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo praesentium sed, quod
+                                    iste sit a deserunt nesciunt dicta suscipit aspernatur placeat ipsam quisquam, esse
+                                    quibusdam omnis doloremque? Accusantium, reiciendis assumenda!</p>
+                            </div>
+                        </div>
+                    </section>
 
-            </section>
+                    <section class="section">
+                        <div class="section-timeline">
+                            <div class="circle">
+                                <div class="point"></div>
+                            </div>
+                            <div class="line"></div>
+                        </div>
 
-            <section class="">
-                <h2>Образование</h2>
+                        <div class="section-content">
+                            <h2 class="section-title">Навыки</h2>
 
-            </section>
+                            <div class="section-body">
+                                <div class="filters">
+                                    <label>
+                                        Категория:
+                                        <select id="filter-select" class="input-field">
+                                            <option value="all" selected>Все</option>
+                                            <option value="development">Разработка</option>
+                                            <option value="design">Дизайн</option>
+                                            <option value="other">Другое</option>
+                                        </select>
+                                    </label>
 
-            <section class="">
-                <h2>Последние проекты</h2>
+                                    <label>
+                                        Поиск:
+                                        <input id="search-input" class="input-field" type="text"
+                                            placeholder="Введите название навыка" />
+                                    </label>
+                                </div>
 
-            </section>
+                                <div class="card-list-skills">
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images//skills-icon/html5.png" />
+                                        <p>HTML</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/css3.png" />
+                                        <p>CSS</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/js.png" />
+                                        <p>JavaScript</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/react.png" />
+                                        <p>React</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/ts.png" />
+                                        <p>TypeScript</p>
+                                    </div>
+                                    <div class="card-skill" data-category="other">
+                                        <img src="./images/skills-icon/git.png" />
+                                        <p>Git</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/axios.svg" />
+                                        <p>Axios</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/rest-api.png" />
+                                        <p>REST API</p>
+                                    </div>
+                                    <div class="card-skill" data-category="design">
+                                        <img src="./images/skills-icon/figma.png" />
+                                        <p>Figma</p>
+                                    </div>
+                                    <div class="card-skill" data-category="design">
+                                        <img src="./images/skills-icon/ps.png" />
+                                        <p>Photoshop</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/ant-design.svg" />
+                                        <p>Ant Design</p>
+                                    </div>
+                                    <div class="card-skill" data-category="other">
+                                        <img src="./images/skills-icon/vs.png" />
+                                        <p>Visual Studio Code</p>
+                                    </div>
+                                    <div class="card-skill" data-category="other">
+                                        <img src="./images/skills-icon/vite.svg" />
+                                        <p>Vite</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/react-router.png" />
+                                        <p>React Router</p>
+                                    </div>
+                                    <div class="card-skill" data-category="development">
+                                        <img src="./images/skills-icon/redux-toolkit.png" />
+                                        <p>Redux Toolkit</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <div class="section-timeline">
+                            <div class="circle">
+                                <div class="point"></div>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="section-content">
+                            <h2 class="section-title">Образование</h2>
+
+                            <div class="section-body">
+                                <div class="card-education">
+                                    <div class="logo-education">
+                                        <img src="./images/logo-mstuca.png" />
+                                        <p>Московский Государственный Технический Университет Гражданской Авиации (МГТУ
+                                            ГА)
+                                        </p>
+                                    </div>
+
+                                    <div class="content-education">
+                                        <p class="education-name">Бакалавр 09.03.01 Информатика и вычислительная техника
+                                        </p>
+                                        <p class="education-data">2026</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <div class="section-timeline">
+                            <div class="circle">
+                                <div class="point"></div>
+                            </div>
+                        </div>
+
+                        <div class="section-content">
+                            <h2 class="section-title">Последние проекты</h2>
+
+                            <div class="section-body">
+                                <div class="card-list">
+                                    <div class="card-project">
+                                        <div style="background-image: url(./images/book-tracker-banner.jpg);"
+                                            class="banner-project"></div>
+
+                                        <div class="card-body">
+                                            <div class="card-content">
+                                                <p class="card-title">Веб-приложение для ведения личной библиотеки </p>
+                                                <p class="card-description">
+                                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet aut pariatur ab repellendus et excepturi corporis quisquam dolor, placeat temporibus ex, dolorem fuga veniam molestiae repellat? Explicabo eaque inventore aut?
+                                                </p>
+                                            </div>
+
+                                            <div class="card-footer">
+                                                <div class="link-icon">
+                                                    <i data-lucide="link"></i>
+                                                </div>
+
+                                                <a href="https://github.com/KatrinHurricaneGSL/readtrack"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">https://github.com/KatrinHurricaneGSL/readtrack
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-project">
+                                        <div style="background-image: url(./images/marketplace-banner.jpg); background-position: center;"
+                                            class="banner-project"></div>
+
+                                        <div class="card-body">
+                                            <div class="card-content">
+                                                <p class="card-title">Маркетплейс</p>
+                                                <p class="card-description">
+                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quod ad rerum nobis repudiandae ex sed nulla natus aliquid pariatur maiores, recusandae exercitationem, illum iure culpa! Impedit iste sit consequuntur!
+                                                </p>
+                                            </div>
+
+                                            <div class="card-footer">
+                                                <div class="link-icon">
+                                                    <i data-lucide="link"></i>
+                                                </div>
+
+                                                <a href="https://github.com/KatrinHurricaneGSL/react-market"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">https://github.com/KatrinHurricaneGSL/react-market
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </main>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="./scripts/main.js" defer></script>
 </body>
 
