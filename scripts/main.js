@@ -8,7 +8,7 @@ filterSelect.addEventListener("change", sortCardList)
 
 searchInput.addEventListener("keyup", sortCardList)
 
-themeBtn.addEventListener("click", (event) => {
+themeBtn.addEventListener("click", () => {
     const currentTheme = document.body.getAttribute("data-theme")
     const newTheme = currentTheme === "dark" ? "light" : "dark"
 
@@ -25,9 +25,13 @@ function setTheme(currentTheme, updateStorage = false) {
     if (currentTheme === "dark") {
         lightIcon.classList.remove("hidden")
         darkIcon.classList.add("hidden")
+
+        themeBtn.setAttribute("title", "Перейти на светлую тему")
     } else {
         lightIcon.classList.add("hidden")
         darkIcon.classList.remove("hidden")
+
+        themeBtn.setAttribute("title", "Перейти на тёмную тему")
     }
 
     if (updateStorage) {
@@ -49,6 +53,8 @@ function sortCardList() {
     const selectedCategory = filterSelect.value
     const skills = document.querySelectorAll(".card-skill")
     const searchText = searchInput.value.trim().toLowerCase()
+
+    let totalVisible = 0
 
     skills.forEach((skill) => {
         let categoryResult = true
@@ -72,8 +78,15 @@ function sortCardList() {
 
         if (categoryResult && searchResult) {
             skill.classList.remove("hidden")
+            totalVisible++
         } else {
             skill.classList.add("hidden")
         }
     })
+
+    if(totalVisible === 0) {
+        document.querySelector(".skills-empty").classList.remove("hidden")
+    } else {
+        document.querySelector(".skills-empty").classList.add("hidden")
+    }
 }

@@ -1,3 +1,33 @@
+:root {
+    --page-bg: white;
+    --main-bg: #F7F9Fc;
+    --text-primary: #2E2E48;
+    --text-secondary: #79819A;
+    --card: white;
+    --line: #E2E6EE;
+    --point: #5531A7;
+    --link-bg: #E1E7Fe;
+    --link: #516CF7;
+    --input-bg: white;
+    --input-color: black;
+    --input-border: #E2E6EE
+}
+
+body[data-theme="dark"] {
+    --page-bg: #232339;
+    --main-bg: #232339;
+    --text-primary: #E2E6EE;
+    --text-secondary: #ACB1C3;
+    --card: #2E2E48;
+    --line: #2E2E48;
+    --point: #C696FC;
+    --link-bg: #2A337E;
+    --link: #95AAFB;
+    --input-bg: #2E2E48;
+    --input-color: white;
+    --input-border: #2E2E48
+}
+
 /*
 Шрифты
 */
@@ -103,6 +133,7 @@ p {
 
 .page {
     display: flex;
+    background-color: var(--page-bg);
 }
 
 .header {
@@ -113,7 +144,7 @@ p {
 .main {
     flex: 1;
     padding: 32px 24px 32px 16px;
-    background-color: #F7F9FC;
+    background-color: var(--main-bg);
 }
 
 .banner-photo {
@@ -128,7 +159,7 @@ p {
 }
 
 .divider {
-    background-color: #E2E6EE;
+    background-color: var(--line);
     height: 1px;
     border: 0;
 }
@@ -149,7 +180,7 @@ p {
 .header-title h1 {
     font-weight: 700;
     font-size: inherit;
-    color: #2E2E48;
+    color: var(--text-primary);
 }
 
 .header-title p {
@@ -184,7 +215,7 @@ p {
 }
 
 .blockquote p {
-    color: #47516B;
+    color: var(--text-primary);
     font-weight: 700;
 }
 
@@ -196,7 +227,7 @@ p {
     font-weight: 500;
     font-style: normal;
 
-    color: #79819A;
+    color: var(--text-secondary);
 }
 
 .contacts,
@@ -212,9 +243,9 @@ p {
 }
 
 .contact-icon {
-    background-color: #E2E6EE;
+    background-color: var(--line);
     border-radius: 50%;
-    border: 1px solid #E2E6EE;
+    border: 1px solid var(--line);
     width: 30px;
     height: 30px;
 
@@ -224,7 +255,7 @@ p {
 }
 
 .contact-icon svg {
-    color: #79819A;
+    color: var(--text-secondary);
     width: 18px;
 }
 
@@ -235,15 +266,14 @@ p {
 }
 
 .contact-label {
-    color: #79819A;
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: 14px;
 }
 
 .contact-value {
-    color: #47516B;
+    color: var(--text-primary);
     font-weight: 700;
-    font-size: 15px;
 }
 
 .section {
@@ -266,7 +296,7 @@ p {
     width: 32px;
     height: 32px;
 
-    background-color: white;
+    background-color: var(--card);
     border-radius: 50%;
 
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05), 0px 6px 24px rgba(0, 0, 0, 0.04), inset 0px 1px 1px rgba(0, 0, 0, 0.04);
@@ -276,13 +306,13 @@ p {
     border-radius: 50%;
     width: 8px;
     height: 8px;
-    background-color: #5531A7;
+    background-color: var(--point);
 }
 
 .line {
     flex: 1;
     width: 1px;
-    background-color: #E2E6EE;
+    background-color: var(--line);
 }
 
 .section-content {
@@ -296,7 +326,18 @@ p {
 .section-title {
     font-size: 22px;
     font-weight: 700;
-    color: #2E2E48;
+    color: var(--text-primary);
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about p {
+    color: var(--text-primary);
+    line-height: 1.6;
 }
 
 .filters {
@@ -308,13 +349,30 @@ p {
 .input-field {
     padding: 5px 15px;
     border-radius: 8px;
-    border: 1px solid #e2e6ee;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--input-color);
+    width: 100%;
+}
+
+label {
+    color: var(--text-primary)
+}
+
+input::placeholder {
+    color: var(--text-primary)
 }
 
 .card-list-skills {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 8px;
+}
+
+.skills-empty {
+    width: 100%;
+    text-align: center;
+    color: var(--text-primary);
 }
 
 .card-skill {
@@ -324,7 +382,7 @@ p {
     align-items: center;
 
     padding: 16px;
-    background-color: white;
+    background-color: var(--card);
     border-radius: 8px;
 }
 
@@ -344,10 +402,9 @@ p {
     align-items: center;
     justify-content: center;
 
-    font-size: 16px;
     line-height: 19px;
     font-weight: 700;
-    color: #2e2e48;
+    color: var(--text-primary);
     text-align: center;
 }
 
@@ -356,26 +413,33 @@ p {
     flex-direction: column;
     gap: 10px;
 
-    width: 408px;
+    width: 100%;
     padding: 16px 24px;
     border-radius: 8px;
-    background-color: white;
+    background-color: var(--card);
 }
 
-.logo-education {
+.title-education {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
+.logo-education {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e2e6ee;
+}
+
 .logo-education img {
     width: 64px;
     height: 64px;
+    max-width: none;
+    object-fit: contain;
 }
 
-.logo-education p {
-    color: #2E2E48;
-    font-size: 14px;
+.title-education p {
+    color: var(--text-primary);
     font-weight: 700;
 }
 
@@ -386,30 +450,30 @@ p {
 }
 
 .education-name {
-    color: #2E2E48;
+    color: var(--text-primary);
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-.education-data {
-    color: #79819A;
+.education-date {
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: 12px;
 }
 
 .card-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
 }
 
 .card-project {
-    background-color: white;
+    background-color: var(--card);
     border-radius: 8px;
 }
 
 .banner-project {
-    height: 160px;
+    height: 140px;
     background-size: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -429,42 +493,183 @@ p {
 }
 
 .card-title {
-    font-size: 16px;
     font-weight: 700;
-    color: #2E2E48;
+    color: var(--text-primary);
 }
 
 .card-description {
     font-size: 14px;
-    font-weight: 500;
-    color: #79819A;
+    color: var(--text-secondary);
 }
 
 .card-footer {
     display: flex;
     gap: 12px;
     align-items: center;
+    min-width: 0;
+}
+
+.card-footer a {
+    flex: 1;
+    min-width: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .link-icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 
-    background-color: #E1E7FE;
+    background-color: var(--link-bg);
     width: 24px;
     height: 24px;
     border-radius: 50%;
 }
 
 .link-icon svg {
-    color: #516CF7;
+    color: var(--link);
     width: 15px;
 }
 
 a {
     text-decoration: none;
-    font-size: 16px;
     font-weight: 700;
-    color: #516CF7;
+    color: var(--link);
+}
+
+@media (max-width: 1336px) {
+    .header-title {
+        font-size: 20px;
+    }
+
+    .blockquote {
+        font-size: 12px;
+    }
+
+    .header {
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 920px) {
+    .card-skill p {
+        line-height: 16px;
+        font-size: 14px;
+    }
+
+    .card-list-skills {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+
+    .header {
+        width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page {
+        display: block;
+        background-color: var(--main-bg);
+    }
+
+    .header {
+        width: 100%;
+        height: auto;
+    }
+
+    .banner-photo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .banner-photo img {
+        max-height: 300px;
+    }
+
+    .header-title {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .blockquote {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 610px) {
+    .card-list {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 468px) {
+    .circle {
+        width: 24px;
+        height: 24px;
+    }
+
+    .point {
+        width: 6px;
+        height: 6px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .card-education {
+        padding: 12px;
+    }
+
+    .logo-education img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .title-education p {
+        font-size: 12px;
+    }
+
+    .education-name {
+        font-size: 12px;
+    }
+
+    .education-date {
+        font-size: 10px;
+    }
+
+    .card-skill {
+        padding: 10px;
+    }
+
+    .card-skill img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 375px) {
+    html {
+        font-size: 14px;
+    }
+
+    .title-education p,
+    .education-name {
+        font-size: 10px;
+    }
+
+    .card-description {
+        font-size: 12px;
+    }
 }
