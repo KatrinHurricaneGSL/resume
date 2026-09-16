@@ -346,6 +346,12 @@ p {
     margin-bottom: 20px;
 }
 
+.input-label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
 .input-field {
     padding: 5px 15px;
     border-radius: 8px;
@@ -568,6 +574,12 @@ a {
 
     .header {
         width: 240px;
+    }
+
+    .input-label {
+        align-items: start;
+        flex-direction: column;
+        gap: 4px;
     }
 }
 
