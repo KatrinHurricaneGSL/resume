@@ -12,10 +12,10 @@ themeBtn.addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme")
     const newTheme = currentTheme === "dark" ? "light" : "dark"
 
-    setTheme(newTheme, true)
+    setTheme(newTheme)
 })
 
-function setTheme(currentTheme, updateStorage = false) {
+function setTheme(currentTheme) {
     const lightIcon = document.querySelector(".theme-light-icon")
     const darkIcon = document.querySelector(".theme-dark-icon")
 
@@ -25,26 +25,25 @@ function setTheme(currentTheme, updateStorage = false) {
         lightIcon.classList.remove("hidden")
         darkIcon.classList.add("hidden")
 
-        themeBtn.setAttribute("title", "Перейти на светлую тему")
+        updateTitle(currentTheme)
     } else {
         lightIcon.classList.add("hidden")
         darkIcon.classList.remove("hidden")
 
-        themeBtn.setAttribute("title", "Перейти на тёмную тему")
+        updateTitle(currentTheme)
     }
 
-    if (updateStorage) {
-        localStorage.setItem("theme", currentTheme)
-    }
+    localStorage.setItem("theme", currentTheme)
+}
+
+function updateTitle(theme) {
+    const title = theme === "dark" ? "Перейти на светлую тему" : "Перейти на тёмную тему"
+    themeBtn.setAttribute("title", title)
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme")
-    if (!savedTheme) {
-        return
-    }
-
-    setTheme(savedTheme)
+    const theme = document.documentElement.getAttribute("data-theme")
+    updateTitle(theme)
 })
 
 function sortCardList() {
