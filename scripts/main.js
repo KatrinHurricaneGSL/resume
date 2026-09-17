@@ -16,22 +16,9 @@ themeBtn.addEventListener("click", () => {
 })
 
 function setTheme(currentTheme) {
-    const lightIcon = document.querySelector(".theme-light-icon")
-    const darkIcon = document.querySelector(".theme-dark-icon")
-
     document.documentElement.setAttribute("data-theme", currentTheme)
 
-    if (currentTheme === "dark") {
-        lightIcon.classList.remove("hidden")
-        darkIcon.classList.add("hidden")
-
-        updateTitle(currentTheme)
-    } else {
-        lightIcon.classList.add("hidden")
-        darkIcon.classList.remove("hidden")
-
-        updateTitle(currentTheme)
-    }
+    updateThemeButton(currentTheme)
 
     localStorage.setItem("theme", currentTheme)
 }
@@ -41,9 +28,26 @@ function updateTitle(theme) {
     themeBtn.setAttribute("title", title)
 }
 
+function updateThemeButton(theme) {
+    const lightIcon = document.querySelector(".theme-light-icon")
+    const darkIcon = document.querySelector(".theme-dark-icon")
+
+    if (theme === "dark") {
+        lightIcon.classList.remove("hidden")
+        darkIcon.classList.add("hidden")
+
+        updateTitle(theme)
+    } else {
+        lightIcon.classList.add("hidden")
+        darkIcon.classList.remove("hidden")
+
+        updateTitle(theme)
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const theme = document.documentElement.getAttribute("data-theme")
-    updateTitle(theme)
+    updateThemeButton(theme)
 })
 
 function sortCardList() {
