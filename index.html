@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме</title>
     <link rel="stylesheet" href="./css/main.css" />
+
+    <script>
+        {
+            const savedTheme = localStorage.getItem("theme")
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme)
+            }
+        }
+    </script>
 </head>
 
 <body>
     <button class="theme" type="button">
-        <i data-lucide="sun" class="theme-light-icon"></i>
+        <i data-lucide="sun" class="theme-light-icon hidden"></i>
         <i data-lucide="moon-star" class="theme-dark-icon"></i>
     </button>
 
@@ -110,7 +119,8 @@
                                         на TypeScript и JavaScript.
                                     </p>
                                     <p>
-                                        В учебных проектах разрабатываю приложения с поиском, фильтрацией, пагинацией, работой с
+                                        В учебных проектах разрабатываю приложения с поиском, фильтрацией, пагинацией,
+                                        работой с
                                         состоянием и интеграцией REST API.
                                     </p>
                                     <p>
@@ -119,8 +129,8 @@
                                         страницами с графиками, фильтрами и формами, а также взаимодействием с API.
                                     </p>
                                     <p>
-                                        Сейчас углубляю знания React, архитектуры frontend-приложений,
-                                        управления состоянием и работы с API.
+                                        Сейчас продолжаю развиваться во frontend-разработке, углубляя знания архитектуры
+                                        приложений, работы с API и построения пользовательских интерфейсов.
                                     </p>
                                 </div>
 
@@ -242,11 +252,13 @@
                                             <img src="./images/mstuca.jpg" />
                                         </div>
 
-                                        <p>Московский Государственный Технический Университет Гражданской Авиации (МГТУ ГА)</p>
+                                        <p>Московский Государственный Технический Университет Гражданской Авиации (МГТУ
+                                            ГА)</p>
                                     </div>
 
                                     <div class="content-education">
-                                        <p class="education-name">Бакалавр 09.03.01 Информатика и вычислительная техника</p>
+                                        <p class="education-name">Бакалавр 09.03.01 Информатика и вычислительная техника
+                                        </p>
                                         <p class="education-date">2026</p>
                                     </div>
                                 </div>
@@ -272,7 +284,7 @@
 
                                         <div class="card-body">
                                             <div class="card-content">
-                                                <p class="card-title">ReadTrack</p>
+                                                <h3 class="card-title">ReadTrack</h3>
                                                 <p class="card-description">
                                                     Веб-приложение для ведения личной библиотеки
                                                     позволяет добавлять и удалять книги, менять статус чтения, искать и
@@ -299,7 +311,7 @@
 
                                         <div class="card-body">
                                             <div class="card-content">
-                                                <p class="card-title">ReactMarket</p>
+                                                <h3 class="card-title">ReactMarket</h3>
                                                 <p class="card-description">
                                                     Веб-приложение маркетплейса
                                                     позволяет просматривать каталог товаров, искать и сортировать

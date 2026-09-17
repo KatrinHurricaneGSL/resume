@@ -9,7 +9,7 @@ filterSelect.addEventListener("change", sortCardList)
 searchInput.addEventListener("keyup", sortCardList)
 
 themeBtn.addEventListener("click", () => {
-    const currentTheme = document.body.getAttribute("data-theme")
+    const currentTheme = document.documentElement.getAttribute("data-theme")
     const newTheme = currentTheme === "dark" ? "light" : "dark"
 
     setTheme(newTheme, true)
@@ -19,9 +19,8 @@ function setTheme(currentTheme, updateStorage = false) {
     const lightIcon = document.querySelector(".theme-light-icon")
     const darkIcon = document.querySelector(".theme-dark-icon")
 
-    document.body.setAttribute("data-theme", currentTheme)
+    document.documentElement.setAttribute("data-theme", currentTheme)
 
-    console.log(currentTheme === "dark", currentTheme === "light")
     if (currentTheme === "dark") {
         lightIcon.classList.remove("hidden")
         darkIcon.classList.add("hidden")
@@ -45,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return
     }
 
-    console.log(savedTheme)
     setTheme(savedTheme)
 })
 
